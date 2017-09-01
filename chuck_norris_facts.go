@@ -20,6 +20,7 @@ var factsChannel = make(chan fact)
 
 func main() {
 	numberOfFacts := flag.Int("n", 1, "number of facts to print")
+	flag.Parse()
 	for i := 0; i < *numberOfFacts; i++ {
 		go fetchFact()
 	}
